@@ -51,7 +51,6 @@ function Convert-PDFtoTiff
       if ($letter) {
         $GsSettings.Size.Native = [GhostscriptSharp.Settings.GhostscriptPageSizes]::letter
       }
-    
     }
     End
     {
