@@ -52,6 +52,7 @@ function Convert-PDFtoTiff
     }
     Add-Type -AssemblyName System.Drawing
   }
+  
   Process
   {
     $Size = New-Object System.Drawing.Size($dpi,$dpi)
@@ -67,9 +68,9 @@ function Convert-PDFtoTiff
     }
     if ($letter) {
       $GsSettings.Size.Native = [GhostscriptSharp.Settings.GhostscriptPageSizes]::letter
-    }
-    
+    }   
   }
+  
   End
   {
     Write-Verbose "Create TIFF file $GsOutputPath with $($Size.Height) dpi as $($GsSettings.Size.Native)"
